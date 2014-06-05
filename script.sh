@@ -6,13 +6,13 @@
   echo "Hardware information"
   echo
   
-  sudo $VAR1 | sed '/^ *#/d; /^ *$/d'
+  $VAR1 | sed -r 's/^[0-9:.a-z]+\s//'
 
    
   echo "network"
   echo
   
-  sudo $VAR2 -a
+  $VAR2 -a
 
   
   echo "process"
