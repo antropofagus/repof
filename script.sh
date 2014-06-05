@@ -6,7 +6,7 @@
   echo "Hardware information"
   echo
   
-  $VAR1 | sed -r 's/^[0-9:.a-z]+\s//'
+  $VAR1 | sed -r 's/^[0-9:.]+\s//'
 
    
   echo "network"
