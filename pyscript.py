@@ -1,5 +1,9 @@
 #! /usr/bin/env python
 import subprocess
+def pci():
+	var1='/sbin/lspci'
+	var1_arg='-tv'
+	subprocess.call([var1, var1_arg])
 def network_func():
 	VAR2 = "/sbin/ifconfig"
 	VAR2_arg = "-a"
