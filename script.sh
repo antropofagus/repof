@@ -1,12 +1,19 @@
  #!/bin/bash
  
- VAR1=/sbin/lspci
- VAR2=/sbin/ifconfig
+ VAR1=lspci
+ VAR2=ifconfig
+ ROOT_UID=0
+ E_NOTROOT=67
+ if [ "$UID" -ne "$ROOT_UID" ]
+then
+  echo "Для работы сценария требуются права root."
+  exit $E_NOTROOT
+fi
    
   echo "Hardware information"
   echo
   
-  $VAR1 | sed -r 's/^[0-9:.]+\s//'
+  $VAR1 | sed -r 's/^[0-9:.a-z]+\s//'
 
    
   echo "network"
