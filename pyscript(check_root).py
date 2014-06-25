@@ -3,10 +3,10 @@ import os
 import subprocess
 def check_root():
 	if os.geteuid() != 0:
-		print 'you are not root'
-		exit
+		print ('you are not root')
+		exit()
 	else:
-		print ""            
+		print ("")            
 def pci():
 	subprocess.call("lspci -tv", shell=True)
 def network_func():
