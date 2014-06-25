@@ -4,7 +4,7 @@ import subprocess
 def check_root():
 	if os.geteuid() != 0:
 		print ('you are not root')
-		exit()
+		raise SystemExit(1)
 	else:
 		print ("")            
 def pci():
